@@ -23,6 +23,12 @@ export default defineConfig({
   ],
   server: {
     port: parseInt(process.env.PORT || process.env.FRONTEND_PORT || '5173'),
-    host: true
+    host: true,
+    proxy: {
+      '/api/docs/json': {
+        target: 'https://learnablemeta.com',
+        changeOrigin: true
+      }
+    }
   }
 });

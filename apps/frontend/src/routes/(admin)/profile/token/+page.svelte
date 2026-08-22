@@ -189,9 +189,7 @@
       {/if}
       <Button
         variant="link"
-        href="https://docs.learnablemeta.com/api/"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/docs/api"
         class="mt-3 h-auto p-0">View API documentation</Button>
     </CardContent>
   </Card>

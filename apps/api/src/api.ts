@@ -56,7 +56,7 @@ There are no official client libraries yet. Each endpoint includes ready-to-copy
         servers: openApiServers,
         externalDocs: {
           description: 'Learnable Meta documentation',
-          url: 'https://docs.learnablemeta.com/',
+          url: 'https://learnablemeta.com/docs',
         },
         tags: [
           {
@@ -86,6 +86,10 @@ There are no official client libraries yet. Each endpoint includes ready-to-copy
         },
       },
     }),
+  )
+  .get(
+    '/docs',
+    () => new Response(null, { status: 308, headers: { location: '/docs/api' } }),
   )
   .use(userscriptRouter)
   .use(internalRouter)

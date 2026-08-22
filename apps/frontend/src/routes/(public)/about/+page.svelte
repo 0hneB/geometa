@@ -24,7 +24,7 @@
 
     <div class="mt-8 flex flex-wrap gap-3">
       <Button href="/maps">Browse maps</Button>
-      <Button variant="outline" href="https://docs.learnablemeta.com/getting-started/">
+      <Button variant="outline" href="/docs/getting-started">
         Get started
       </Button>
     </div>

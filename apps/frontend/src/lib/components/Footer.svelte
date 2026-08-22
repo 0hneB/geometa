@@ -7,7 +7,7 @@
     class="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-6 gap-y-3 px-6 py-10 text-sm text-muted-foreground"
     aria-label="Footer">
     <a href={resolve('/about')} class="hover:text-foreground">About</a>
-    <a href="https://docs.learnablemeta.com/" class="hover:text-foreground">Documentation</a>
+    <a href={resolve('/docs')} class="hover:text-foreground">Documentation</a>
     <a
       href="https://github.com/likeon/geometa"
       target="_blank"

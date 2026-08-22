@@ -31,7 +31,7 @@
     <div class="grow flex items-center justify-end space-x-3">
       <Button
         variant="outline"
-        href="https://docs.learnablemeta.com/getting-started/personal-maps/"
+        href="/docs/getting-started/personal-maps"
         target="_blank"
         rel="noopener noreferrer">
         What are personal maps?

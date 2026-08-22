@@ -22,7 +22,7 @@
         </h1>
         <div class="mt-10 flex flex-wrap items-center gap-3">
           <Button href="/maps">Browse maps</Button>
-          <Button variant="secondary" href="https://docs.learnablemeta.com/getting-started/">
+          <Button variant="secondary" href="/docs/getting-started">
             Get started
           </Button>
         </div>

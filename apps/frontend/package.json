@@ -10,6 +10,7 @@
     "format": "prettier --write \"src/**/*.{svelte,ts,js}\"",
     "fix": "prettier --write \"src/**/*.{svelte,ts,js}\" && eslint . --fix",
     "lint": "prettier --check \"src/**/*.{svelte,ts,js}\" && eslint .",
+    "test:docs": "node --test src/lib/docs/remark-headings.test.js",
     "sanity": "npm run fix && npm run check && npm run lint"
   },
   "devDependencies": {
@@ -45,6 +46,7 @@
     "estree-walker": "^3.0.3",
     "globals": "^17.2.0",
     "layerchart": "2.0.0-next.43",
+    "mdsvex": "^0.12.8",
     "mode-watcher": "^1.1.0",
     "paneforge": "^1.0.2",
     "postcss": "^8.5.25",

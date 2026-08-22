@@ -31,7 +31,7 @@
     <div class="grow flex items-center justify-end space-x-3">
       <Button
         variant="outline"
-        href="https://docs.learnablemeta.com/map-creators/getting-started/"
+        href="/docs/map-creators/getting-started"
         target="_blank"
         rel="noopener noreferrer">Documentation</Button>
       <Button

@@ -72,9 +72,7 @@
       ><Icon icon="gis:poi-map" color="white" class="mr-3 h-4 w-4" />Open Creator Dashboard</Button>
     <Button
       variant="outline"
-      href="https://docs.learnablemeta.com/map-creators/getting-started/"
-      target="_blank"
-      rel="noopener noreferrer">Read the docs</Button>
+      href="/docs/map-creators/getting-started">Read the docs</Button>
   </div>
   <div class="w-full flex justify-center mb-10 mt-2">
     <p class="text-sm">Requires login with Discord</p>

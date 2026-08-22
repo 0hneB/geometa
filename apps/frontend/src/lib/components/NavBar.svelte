@@ -18,7 +18,7 @@
       name: 'Maps'
     },
     {
-      url: 'https://docs.learnablemeta.com/',
+      url: '/docs',
       name: 'Docs'
     }
   ];

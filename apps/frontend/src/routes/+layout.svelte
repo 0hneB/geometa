@@ -41,7 +41,9 @@
         {@render children?.()}
       {/if}
     </main>
-    <Footer />
+    {#if page.url.pathname !== '/docs/api'}
+      <Footer />
+    {/if}
   </div>
 </Tooltip.Provider>
 <Toaster />

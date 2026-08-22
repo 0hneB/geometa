@@ -138,7 +138,7 @@
           <p class="text-sm font-medium mb-2">Need help?</p>
           <p class="text-xs text-muted-foreground">
             Check the <a
-              href="https://docs.learnablemeta.com/map-creators/meta-uploads/"
+              href="/docs/map-creators/meta-uploads"
               target="_blank"
               rel="noopener noreferrer"
               class="underline hover:text-primary">documentation</a> for detailed format requirements

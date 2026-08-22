@@ -8,7 +8,7 @@ This is monorepo for [learnablemeta.com](https://learnablemeta.com/) project.
 ## For Regular Users
 
 If you're looking to use LearnableMeta:
-- 📖 Installation guide: https://learnablemeta.com/about
+- 📖 Installation guide: https://learnablemeta.com/docs/getting-started
 - 💬 Need help? Join our Discord: https://discord.gg/AcXEWznYZe (#help-desk channel)
 
 Even if you believe your issue is technical, please start with Discord support first.
@@ -22,7 +22,7 @@ All kinds of contributions are welcome. Make sure to read the [CONTRIBUTING.md](
 ### Tech Stack
 We started with a single SvelteKit fullstack service running on Cloudflare Workers, but SvelteKit's fullstack capabilities weren't as comprehensive as we needed, and Cloudflare KV had terrible latency. Eventually we split out frontend and API services - the frontend is supposed to fetch and modify data only through the API, but right now the transition isn't fully finished and the frontend is still hitting the database directly on some old pages.
 
-- Frontend: SvelteKit 5, TypeScript, TailwindCSS 4
+- Frontend and documentation: SvelteKit 5, MDsveX, TypeScript, TailwindCSS 4
 - Backend: Elysia.js (Bun runtime), PostgreSQL with Drizzle ORM
 - Discord bot: rust using poise/serenity
 - Deployment: Kubernetes with Flux GitOps
