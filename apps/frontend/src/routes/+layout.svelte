@@ -22,7 +22,7 @@
 
 <ModeWatcher />
 <Tooltip.Provider>
-  <div class="app" data-sveltekit-reload={updated.current}>
+  <div class="app bg-background" data-sveltekit-reload={updated.current}>
     <!-- <AnnouncementBanner /> -->
     <NavBar />
     <main>
