@@ -93,3 +93,12 @@
     <p class="p-8 text-muted-foreground">Loading API documentation…</p>
   {/if}
 </div>
+
+<style>
+  @media (min-width: 64rem) {
+    :global(#scalar-api-reference .references-layout) {
+      --full-height: calc(100dvh - 3.25rem);
+      min-height: calc(100dvh - 3.25rem);
+    }
+  }
+</style>

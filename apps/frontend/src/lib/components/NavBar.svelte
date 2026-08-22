@@ -28,7 +28,11 @@
 </script>
 
 <header
-  class="sticky top-0 z-50 w-full bg-gradient-to-r from-green-900 to-sky-900 px-2 py-0 sm:px-4">
+  class="w-full bg-gradient-to-r from-green-900 to-sky-900 px-2 py-0 sm:px-4 {page.url.pathname.startsWith(
+    '/docs'
+  )
+    ? 'sticky top-0 z-50'
+    : ''}">
   <div class="container-wrapper">
     <div class="container flex h-13 items-center gap-2 md:gap-4">
       <MainNav {navLinks} />
