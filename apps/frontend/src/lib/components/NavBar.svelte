@@ -27,7 +27,8 @@
     'size-8 rounded-md px-0 text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-white/35 data-[active=true]:bg-white/15 data-[active=true]:text-white';
 </script>
 
-<header class="px-2 sm:px-4 py-0 w-full bg-gradient-to-r from-green-900 to-sky-900">
+<header
+  class="sticky top-0 z-50 w-full bg-gradient-to-r from-green-900 to-sky-900 px-2 py-0 sm:px-4">
   <div class="container-wrapper">
     <div class="container flex h-13 items-center gap-2 md:gap-4">
       <MainNav {navLinks} />

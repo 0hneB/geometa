@@ -40,7 +40,7 @@
 </svelte:head>
 
 <div class="xl:grid xl:grid-cols-[minmax(0,1fr)_14rem]">
-  <article class="prose docs-prose mx-auto w-full max-w-4xl px-6 py-10 lg:px-10">
+  <article class="prose docs-prose mx-auto w-full max-w-4xl px-6 pb-10 pt-6 lg:px-10">
     {#if template === 'splash' && hero}
       <div class="docs-hero">
         <enhanced:img src={logo} alt="Learnable Meta globe pin" />
@@ -87,7 +87,9 @@
 
   {#if headings.length}
     <aside class="hidden border-l xl:block">
-      <nav class="sticky top-0 max-h-screen overflow-y-auto px-6 py-10" aria-label="On this page">
+      <nav
+        class="sticky top-13 max-h-[calc(100dvh-3.25rem)] overflow-y-auto px-6 py-10"
+        aria-label="On this page">
         <h2 class="mb-3 text-sm font-semibold">On this page</h2>
         <ul class="space-y-2 text-sm">
           {#each headings as heading (heading.id)}

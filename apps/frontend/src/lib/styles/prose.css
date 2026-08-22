@@ -57,7 +57,7 @@
   }
 
   .docs-prose h1 {
-    @apply mb-6 text-4xl;
+    @apply mt-0 mb-6 text-4xl;
   }
 
   .docs-prose h2 {
@@ -70,7 +70,7 @@
 
   .docs-prose h2,
   .docs-prose h3 {
-    scroll-margin-top: 1.5rem;
+    scroll-margin-top: 4.75rem;
   }
 
   .docs-prose pre {

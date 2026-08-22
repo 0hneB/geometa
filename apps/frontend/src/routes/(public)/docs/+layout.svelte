@@ -51,7 +51,7 @@
     ? 'lg:h-[calc(100dvh-3.25rem)] lg:overflow-hidden'
     : ''}">
   <aside class="hidden border-r bg-muted/30 lg:block">
-    <div class="sticky top-0 max-h-screen overflow-y-auto px-6 py-8">
+    <div class="sticky top-13 max-h-[calc(100dvh-3.25rem)] overflow-y-auto px-6 py-8">
       {@render navigation()}
     </div>
   </aside>
