@@ -95,6 +95,11 @@
 </div>
 
 <style>
+  #scalar-api-reference {
+    --scalar-background-1: var(--background);
+    --scalar-sidebar-background-1: var(--background);
+  }
+
   @media (min-width: 64rem) {
     :global(#scalar-api-reference .references-layout) {
       --full-height: calc(100dvh - 3.25rem);
