@@ -100,6 +100,17 @@
     --scalar-sidebar-background-1: var(--background);
   }
 
+  :global(html:not(.dark) #scalar-api-reference .request-card.dark-mode) {
+    color-scheme: light !important;
+    --scalar-background-1: var(--background);
+    --scalar-background-2: var(--muted);
+    --scalar-background-3: var(--border);
+    --scalar-color-1: var(--foreground);
+    --scalar-color-2: var(--muted-foreground);
+    --scalar-color-3: var(--muted-foreground);
+    --scalar-border-color: var(--border);
+  }
+
   @media (min-width: 64rem) {
     :global(#scalar-api-reference .references-layout) {
       --full-height: calc(100dvh - 3.25rem);

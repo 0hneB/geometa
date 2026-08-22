@@ -74,7 +74,7 @@
   }
 
   .docs-prose pre {
-    @apply mb-4 overflow-x-auto rounded-lg bg-gray-950 p-4 text-sm text-gray-100;
+    @apply mb-4 overflow-x-auto rounded-lg bg-muted p-4 text-sm text-foreground dark:bg-gray-950 dark:text-gray-100;
   }
 
   .docs-prose :not(pre) > code {
@@ -183,20 +183,20 @@
   }
 
   .docs-prose .token.punctuation {
-    color: #cbd5e1;
+    @apply text-slate-600 dark:text-slate-300;
   }
 
   .docs-prose .token.property,
   .docs-prose .token.number {
-    color: #f472b6;
+    @apply text-pink-700 dark:text-pink-400;
   }
 
   .docs-prose .token.string {
-    color: #86efac;
+    @apply text-green-700 dark:text-green-300;
   }
 
   .docs-prose .token.operator {
-    color: #bae6fd;
+    @apply text-sky-700 dark:text-sky-200;
   }
 
   /* Task list styles */
