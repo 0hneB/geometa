@@ -1,21 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { mode } from 'mode-watcher';
-
-  type ScalarConfiguration = {
-    url: string;
-    forceDarkModeState: 'dark' | 'light';
-    hideDarkModeToggle: boolean;
-  };
+  import '@scalar/api-reference/style.css';
 
   type ScalarInstance = {
     destroy: () => void;
-  };
-
-  type ScalarWindow = Window & {
-    Scalar?: {
-      createApiReference: (selector: string, configuration: ScalarConfiguration) => ScalarInstance;
-    };
   };
 
   let loadFailed = $state(false);
@@ -29,43 +18,25 @@
   });
 
   onMount(() => {
-    const scalarWindow = window as ScalarWindow;
     let scalarInstance: ScalarInstance | undefined;
-    let script = document.querySelector<HTMLScriptElement>('script[data-scalar-api-reference]');
-    const render = () => {
-      if (!scalarWindow.Scalar) {
-        loadFailed = true;
-        return;
-      }
-      scalarInstance = scalarWindow.Scalar.createApiReference('#scalar-api-reference', {
-        url: '/api/docs/json',
-        forceDarkModeState: mode.current === 'dark' ? 'dark' : 'light',
-        hideDarkModeToggle: true
-      });
-    };
-    const fail = () => (loadFailed = true);
+    let active = true;
 
-    if (script) {
-      if (scalarWindow.Scalar) render();
-      else {
-        script.addEventListener('load', render, { once: true });
-        script.addEventListener('error', fail, { once: true });
-      }
-    } else {
-      script = document.createElement('script');
-      script.dataset.scalarApiReference = '';
-      script.src =
-        'https://cdn.jsdelivr.net/npm/@scalar/api-reference@latest/dist/browser/standalone.min.js';
-      script.crossOrigin = 'anonymous';
-      script.addEventListener('load', render, { once: true });
-      script.addEventListener('error', fail, { once: true });
-      document.head.append(script);
-    }
+    import('@scalar/api-reference')
+      .then(({ createApiReference }) => {
+        if (!active) return;
+        scalarInstance = createApiReference('#scalar-api-reference', {
+          url: '/api/docs/json',
+          forceDarkModeState: mode.current === 'dark' ? 'dark' : 'light',
+          hideDarkModeToggle: true
+        });
+      })
+      .catch(() => {
+        if (active) loadFailed = true;
+      });
 
     return () => {
+      active = false;
       scalarInstance?.destroy();
-      script?.removeEventListener('load', render);
-      script?.removeEventListener('error', fail);
     };
   });
 </script>
