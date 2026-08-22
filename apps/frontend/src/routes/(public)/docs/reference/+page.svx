@@ -4,7 +4,7 @@ description: Learnable Meta terminology, product links, and userscript source.
 ---
 
 <script>
-  import { CardGrid, LinkCard } from '$lib/components/docs';
+  import { LinkCard } from '$lib/components/docs';
 </script>
 
 ## Terminology
@@ -17,7 +17,7 @@ description: Learnable Meta terminology, product links, and userscript source.
 
 ## Product and community
 
-<CardGrid>
+<div class="docs-grid">
   <LinkCard
     title="Learnable Meta"
     href="/"
@@ -38,11 +38,11 @@ description: Learnable Meta terminology, product links, and userscript source.
     href="https://discord.gg/AcXEWznYZe"
     description="Ask for help or share feedback."
   />
-</CardGrid>
+</div>
 
 ## Technical links
 
-<CardGrid>
+<div class="docs-grid">
   <LinkCard
     title="Install the userscript"
     href="https://github.com/likeon/geometa/raw/main/dist/geometa.user.js"
@@ -53,4 +53,4 @@ description: Learnable Meta terminology, product links, and userscript source.
     href="https://github.com/likeon/geometa"
     description="Learnable Meta is open source on GitHub."
   />
-</CardGrid>
+</div>

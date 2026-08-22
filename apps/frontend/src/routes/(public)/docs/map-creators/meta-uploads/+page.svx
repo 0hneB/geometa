@@ -4,7 +4,7 @@ description: Upload Learnable Meta names, notes, levels, footers, and images fro
 ---
 
 <script>
-  import { Aside, Steps } from '$lib/components/docs';
+  import { Aside } from '$lib/components/docs';
 </script>
 
 The Creator Dashboard can create or update multiple metas from a JSON array. This is useful when descriptions are maintained outside the dashboard.
@@ -62,7 +62,7 @@ The current importer treats an omitted, `null`, or empty `footer` as a blank foo
 
 ## Upload metas
 
-<Steps>
+<div class="docs-steps">
 
 1. Open the relevant group in the [Creator Dashboard](https://learnablemeta.com/map-making).
 2. Choose **Upload Metas**.
@@ -70,6 +70,6 @@ The current importer treats an omitted, `null`, or empty `footer` as a blank foo
 4. Choose whether missing level names should be created automatically.
 5. Select the JSON file. You can also paste the JSON into the open dialog.
 
-</Steps>
+</div>
 
 When full replacement is selected, metas omitted from the uploaded file are deleted. Review the file before confirming that mode.

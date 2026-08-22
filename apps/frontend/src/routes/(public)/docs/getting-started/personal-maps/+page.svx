@@ -4,7 +4,7 @@ description: Build a focused GeoGuessr practice map from shared Learnable Meta c
 ---
 
 <script>
-  import { Aside, Steps } from '$lib/components/docs';
+  import { Aside } from '$lib/components/docs';
 </script>
 
 Personal Maps let you create a focused practice set from metas you have not mastered yet. You can select individual metas from a community map or combine metas from several maps into one GeoGuessr map.
@@ -25,7 +25,7 @@ You need:
 
 ## Create a Personal Map
 
-<Steps>
+<div class="docs-steps">
 
 1. **Create a GeoGuessr map.**
 
@@ -47,7 +47,7 @@ You need:
 
    Select **Upload to GeoGuessr** from your Personal Map, then click **LearnableMeta - Upload** in GeoGuessr's Map Maker. The userscript uploads the selected locations and publishes the map.
 
-</Steps>
+</div>
 
 <Aside type="caution">
 

@@ -12,12 +12,12 @@ hero:
 ---
 
 <script>
-  import { CardGrid, LinkCard } from '$lib/components/docs';
+  import { LinkCard } from '$lib/components/docs';
 </script>
 
 Learnable Meta combines educational GeoGuessr maps with a browser userscript. After you guess, the script explains the useful clue at that location so you can learn landscapes, bollards, signs, road markings, Street View cars, and other country-identification clues in context.
 
-<CardGrid>
+<div class="docs-grid">
   <LinkCard
     title="Getting Started"
     href="/docs/getting-started"
@@ -58,7 +58,7 @@ Learnable Meta combines educational GeoGuessr maps with a browser userscript. Af
     href="/docs/reference"
     description="Find product links, terminology, and source code."
   />
-</CardGrid>
+</div>
 
 ## Useful links
 

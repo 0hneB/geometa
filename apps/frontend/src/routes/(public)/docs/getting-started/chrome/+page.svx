@@ -4,13 +4,13 @@ description: Install Learnable Meta on Chrome, Edge, Brave, Opera, and other Chr
 ---
 
 <script>
-  import { Aside, Steps } from '$lib/components/docs';
+  import { Aside } from '$lib/components/docs';
   import allowUserScripts from '$lib/assets/allowUserScripts.png';
 </script>
 
 These instructions apply to Chrome and most Chromium-based desktop browsers, including Edge, Brave, and Opera.
 
-<Steps>
+<div class="docs-steps">
 
 1. **Install Tampermonkey.**
 
@@ -39,6 +39,6 @@ These instructions apply to Chrome and most Chromium-based desktop browsers, inc
 
    Restart your browser or open a new tab, then choose a map from the [Learnable Meta map list](https://learnablemeta.com/maps).
 
-</Steps>
+</div>
 
 If the installer downloads a file instead of opening Tampermonkey, use the [manual installation video](https://www.youtube.com/watch?v=RpjvLpyiras).

@@ -4,7 +4,7 @@ description: Use Learnable Meta in Firefox for Android.
 ---
 
 <script>
-  import { Aside, Steps } from '$lib/components/docs';
+  import { Aside } from '$lib/components/docs';
 </script>
 
 <Aside type="caution" title="Browser only">
@@ -15,14 +15,14 @@ Learnable Meta does not run in the GeoGuessr Android app. Open GeoGuessr in Fire
 
 Firefox for Android supports the browser extensions needed to run Learnable Meta.
 
-<Steps>
+<div class="docs-steps">
 
 1. Install Firefox on your Android device.
 2. In Firefox, install [Tampermonkey from Firefox Add-ons](https://addons.mozilla.org/firefox/addon/tampermonkey/).
 3. Open the [Learnable Meta userscript installer](https://github.com/likeon/geometa/raw/main/dist/geometa.user.js) and confirm the installation.
 4. Open a fresh GeoGuessr tab in Firefox and choose a [Learnable Meta map](https://learnablemeta.com/maps).
 
-</Steps>
+</div>
 
 <Aside type="tip">
 

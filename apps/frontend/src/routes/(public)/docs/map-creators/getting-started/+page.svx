@@ -4,7 +4,7 @@ description: Prepare a tagged GeoGuessr map, write Learnable Meta notes, and pub
 ---
 
 <script>
-  import { Aside, Steps } from '$lib/components/docs';
+  import { Aside } from '$lib/components/docs';
 </script>
 
 Learnable Meta lets map creators attach one or more educational notes to a location. Players see the relevant notes after guessing.
@@ -17,7 +17,7 @@ The [Creator Dashboard](https://learnablemeta.com/map-making) requires signing i
 
 ## Basic workflow
 
-<Steps>
+<div class="docs-steps">
 
 1. **Prepare the map in map-making.app.**
 
@@ -57,6 +57,6 @@ The [Creator Dashboard](https://learnablemeta.com/map-making) requires signing i
 
    Return to **Metas** and choose **Sync UserScript**. Sync again after changing locations, notes, images, map areas, or map settings; players do not see unsynchronized changes.
 
-</Steps>
+</div>
 
 For bulk editing, Learnable Meta also supports the [meta JSON upload format](/docs/map-creators/meta-uploads).

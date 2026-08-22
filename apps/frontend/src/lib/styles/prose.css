@@ -182,50 +182,21 @@
     @apply text-foreground;
   }
 
-  .docs-prose .token.comment,
-  .docs-prose .token.prolog,
-  .docs-prose .token.doctype,
-  .docs-prose .token.cdata {
-    color: #94a3b8;
-  }
-
   .docs-prose .token.punctuation {
     color: #cbd5e1;
   }
 
   .docs-prose .token.property,
-  .docs-prose .token.tag,
-  .docs-prose .token.boolean,
-  .docs-prose .token.number,
-  .docs-prose .token.constant,
-  .docs-prose .token.symbol {
+  .docs-prose .token.number {
     color: #f472b6;
   }
 
-  .docs-prose .token.selector,
-  .docs-prose .token.attr-name,
-  .docs-prose .token.string,
-  .docs-prose .token.char,
-  .docs-prose .token.builtin {
+  .docs-prose .token.string {
     color: #86efac;
   }
 
-  .docs-prose .token.operator,
-  .docs-prose .token.entity,
-  .docs-prose .token.url,
-  .docs-prose .token.variable {
+  .docs-prose .token.operator {
     color: #bae6fd;
-  }
-
-  .docs-prose .token.atrule,
-  .docs-prose .token.attr-value,
-  .docs-prose .token.function,
-  .docs-prose .token.class-name {
-    color: #fde68a;
-  }
-
-  .docs-prose .token.keyword {
-    color: #c4b5fd;
   }
 
   /* Task list styles */

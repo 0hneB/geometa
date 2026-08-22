@@ -1,16 +1,6 @@
-export type DocLink = {
-  title: string;
-  href: string;
-};
-
-export type DocSection = {
-  label: string;
-  items: readonly DocLink[];
-};
-
 export const docsHome = { title: 'Documentation home', href: '/docs' } as const;
 
-export const docSections: readonly DocSection[] = [
+export const docSections = [
   {
     label: 'Getting Started',
     items: [
@@ -46,7 +36,7 @@ export const docSections: readonly DocSection[] = [
 
 export const docPages = [
   docsHome,
-  ...docSections.flatMap((section) => section.items.filter((item) => item.href.startsWith('/docs')))
+  ...docSections.flatMap((section) => [...section.items])
 ];
 
 export const normalizeDocPath = (pathname: string) => pathname.replace(/\/$/, '') || '/';

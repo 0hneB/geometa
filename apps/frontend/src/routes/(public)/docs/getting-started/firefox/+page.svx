@@ -4,10 +4,10 @@ description: Install Tampermonkey and the Learnable Meta userscript on Firefox.
 ---
 
 <script>
-  import { Aside, Steps } from '$lib/components/docs';
+  import { Aside } from '$lib/components/docs';
 </script>
 
-<Steps>
+<div class="docs-steps">
 
 1. **Install Tampermonkey.**
 
@@ -21,7 +21,7 @@ description: Install Tampermonkey and the Learnable Meta userscript on Firefox.
 
    Restart Firefox or open a new tab, then choose a map from the [Learnable Meta map list](https://learnablemeta.com/maps).
 
-</Steps>
+</div>
 
 <Aside type="caution">
 

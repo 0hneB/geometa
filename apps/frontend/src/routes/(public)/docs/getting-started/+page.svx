@@ -4,7 +4,7 @@ description: Learn what Learnable Meta does and how to start using it with GeoGu
 ---
 
 <script>
-  import { Aside, CardGrid, LinkCard, Steps } from '$lib/components/docs';
+  import { Aside, LinkCard } from '$lib/components/docs';
 </script>
 
 Learnable Meta teaches useful GeoGuessr clues while you play. Its maps contain tagged locations, and its browser userscript displays an explanation after each guess.
@@ -20,7 +20,7 @@ Learnable Meta teaches useful GeoGuessr clues while you play. Its maps contain t
 
 Learnable Meta runs as a userscript inside GeoGuessr. Choose your browser or device to install a supported userscript manager:
 
-<CardGrid>
+<div class="docs-grid">
   <LinkCard
     title="Chrome and Chromium"
     href="/docs/getting-started/chrome"
@@ -41,13 +41,13 @@ Learnable Meta runs as a userscript inside GeoGuessr. Choose your browser or dev
     href="/docs/getting-started/ios"
     description="Community-tested Safari and Orion options."
   />
-</CardGrid>
+</div>
 
 ## Start learning
 
 Learnable Meta teaches clues in context instead of asking you to memorize long lists. A supported map associates each location with a short explanation of the clue worth noticing there.
 
-<Steps>
+<div class="docs-steps">
 
 1. **Install a userscript manager.**
 
@@ -69,7 +69,7 @@ Learnable Meta teaches clues in context instead of asking you to memorize long l
 
    Make your guess normally. On the results screen, read the Learnable Meta note and compare it with the panorama before moving to the next round.
 
-</Steps>
+</div>
 
 <Aside type="caution">
 
