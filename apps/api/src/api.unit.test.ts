@@ -33,9 +33,7 @@ type OpenApiDocument = {
 
 describe('public OpenAPI contract', () => {
   test('redirects to the integrated API reference', async () => {
-    const response = await app.handle(
-      new Request('http://localhost/api/docs'),
-    );
+    const response = await app.handle(new Request('http://localhost/api/docs'));
 
     expect(response.status).toBe(308);
     expect(response.headers.get('location')).toBe('/docs/api');
