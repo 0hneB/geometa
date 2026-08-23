@@ -26,8 +26,8 @@ const walk = (node, visit) => {
 
 /** @returns {(tree: MarkdownNode, file: MarkdownFile) => void} */
 export const remarkHeadings = () => (tree, file) => {
-  /** @type {Map<string, number>} */
-  const counts = new Map();
+  /** @type {Set<string>} */
+  const ids = new Set();
   /** @type {OutlineHeading[]} */
   const headings = [];
 
@@ -36,9 +36,10 @@ export const remarkHeadings = () => (tree, file) => {
 
     const title = textContent(node).trim();
     const base = slug(title);
-    const count = counts.get(base) ?? 0;
-    const id = count ? `${base}-${count}` : base;
-    counts.set(base, count + 1);
+    let id = base;
+    let suffix = 1;
+    while (ids.has(id)) id = `${base}-${suffix++}`;
+    ids.add(id);
 
     node.data ??= {};
     node.data.hProperties = { ...node.data.hProperties, id };
