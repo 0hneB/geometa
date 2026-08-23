@@ -4,8 +4,7 @@
   import ModeSwitcher from '$lib/components/ModeSwitcher.svelte';
   import { Button } from '$lib/components/ui/button';
   import DiscordFillIcon from '~icons/mingcute/discord-fill';
-  import FaSolidToolsIcon from '~icons/fa-solid/tools';
-  import FaSolidUserIcon from '~icons/fa-solid/user';
+  import GithubFillIcon from '~icons/mingcute/github-fill';
   import MobileNav from '$lib/components/nav/MobileNav.svelte';
 
   const navLinks = [
@@ -19,7 +18,15 @@
     },
     {
       url: '/docs',
-      name: 'Docs'
+      name: 'Documentation'
+    },
+    {
+      url: '/map-making',
+      name: 'Map-making'
+    },
+    {
+      url: '/personal',
+      name: 'Personal maps'
     }
   ];
 
@@ -53,21 +60,13 @@
             variant="dark-ghost"
             size="icon"
             class={headerIconButtonClass}
-            href="/personal"
-            aria-label="Profile"
-            data-active={page.url.pathname.startsWith('/personal')}>
-            <FaSolidUserIcon class="w-5 h-5 flex-shrink-0" />
+            href="https://github.com/likeon/geometa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub">
+            <GithubFillIcon class="size-5 flex-shrink-0" />
           </Button>
-          <Button
-            variant="dark-ghost"
-            size="icon"
-            class={headerIconButtonClass}
-            href="/map-making"
-            aria-label="Map making"
-            data-active={page.url.pathname.startsWith('/map-making')}>
-            <FaSolidToolsIcon class="w-5 h-5 flex-shrink-0" />
-          </Button>
-
+          <span class="mx-1 h-5 w-px bg-white/25" aria-hidden="true"></span>
           <ModeSwitcher />
         </nav>
       </div>

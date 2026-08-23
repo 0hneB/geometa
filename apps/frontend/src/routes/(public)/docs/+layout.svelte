@@ -2,10 +2,28 @@
   import { page } from '$app/state';
   import { docsHome, docSections, normalizeDocPath } from '$lib/docs/navigation';
 
+  type DocPage = { title: string; href: string };
+  type DocGroup = { title: string; items: readonly DocPage[] };
+  type DocSection = { label: string; items: readonly (DocPage | DocGroup)[] };
+
   let { children } = $props();
   let mobileNavigationOpen = $state(false);
   let currentPath = $derived(normalizeDocPath(page.url.pathname));
+  const navigationSections: readonly DocSection[] = docSections;
+
+  const isDocPage = (item: DocPage | DocGroup): item is DocPage => 'href' in item;
 </script>
+
+{#snippet navigationLink(item: DocPage)}
+  <a
+    href={item.href}
+    aria-current={currentPath === item.href ? 'page' : undefined}
+    data-active={currentPath === item.href}
+    onclick={() => (mobileNavigationOpen = false)}
+    class="text-muted-foreground data-[active=true]:font-medium data-[active=true]:text-primary">
+    {item.title}
+  </a>
+{/snippet}
 
 {#snippet navigation()}
   <nav class="space-y-6" aria-label="Documentation">
@@ -19,20 +37,22 @@
         {docsHome.title}
       </a>
     </div>
-    {#each docSections as section (section.label)}
+    {#each navigationSections as section (section.label)}
       <section>
         <h2 class="mb-2 text-sm font-semibold">{section.label}</h2>
         <ul class="space-y-2 text-sm">
-          {#each section.items as item (item.href)}
+          {#each section.items as item (item.title)}
             <li>
-              <a
-                href={item.href}
-                aria-current={currentPath === item.href ? 'page' : undefined}
-                data-active={currentPath === item.href}
-                onclick={() => (mobileNavigationOpen = false)}
-                class="text-muted-foreground data-[active=true]:font-medium data-[active=true]:text-primary">
-                {item.title}
-              </a>
+              {#if isDocPage(item)}
+                {@render navigationLink(item)}
+              {:else}
+                <span class="font-medium text-foreground">{item.title}</span>
+                <ul class="mt-2 space-y-2 border-l pl-3">
+                  {#each item.items as child (child.href)}
+                    <li>{@render navigationLink(child)}</li>
+                  {/each}
+                </ul>
+              {/if}
             </li>
           {/each}
         </ul>
