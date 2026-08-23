@@ -26,7 +26,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api/docs/json': {
-        target: 'https://learnablemeta.com',
+        target: process.env.API_URL || 'http://localhost:3000',
         changeOrigin: true
       }
     }
