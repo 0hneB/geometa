@@ -96,6 +96,7 @@
   "allowScripts": {
     "esbuild": true,
     "sharp@": true,
-    "@sentry/cli": true
+    "@sentry/cli": true,
+    "vue-demi@0.14.10": true
   }
 }
