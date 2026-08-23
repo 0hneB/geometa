@@ -18,7 +18,7 @@ spec:
         - name: registries
       containers:
         - name: frontend
-          image: ghcr.io/likeon/geometa-frontend:main-4724f520-1787506362 # {"$imagepolicy": "geometa:frontend"}
+          image: ghcr.io/likeon/geometa-frontend:main-d2ed572f-1787520837 # {"$imagepolicy": "geometa:frontend"}
           imagePullPolicy: Always
           livenessProbe:
             httpGet:
