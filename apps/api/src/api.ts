@@ -90,6 +90,7 @@ There are no official client libraries yet. Each endpoint includes ready-to-copy
   .get(
     '/docs',
     () => new Response(null, { status: 308, headers: { location: '/docs/api' } }),
+    { detail: { hide: true } },
   )
   .use(userscriptRouter)
   .use(internalRouter)

@@ -45,6 +45,7 @@ describe('public OpenAPI contract', () => {
     const response = await app.handle(
       new Request('http://localhost/api/docs/json'),
     );
+    expect(response.status).toBe(200);
     const document = (await response.json()) as OpenApiDocument;
     const operations = Object.entries(document.paths)
       .filter(
