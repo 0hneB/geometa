@@ -24,9 +24,7 @@
 
     <div class="mt-8 flex flex-wrap gap-3">
       <Button href="/maps">Browse maps</Button>
-      <Button variant="outline" href="/docs/getting-started">
-        Get started
-      </Button>
+      <Button variant="outline" href="/docs/getting-started">Get started</Button>
     </div>
 
     <h2 class="mt-10">Open source and community</h2>

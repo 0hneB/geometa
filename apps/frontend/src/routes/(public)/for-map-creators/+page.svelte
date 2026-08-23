@@ -70,9 +70,7 @@
   <div class="mt-3 flex w-full flex-wrap justify-center gap-3">
     <Button href="/map-making"
       ><Icon icon="gis:poi-map" color="white" class="mr-3 h-4 w-4" />Open Creator Dashboard</Button>
-    <Button
-      variant="outline"
-      href="/docs/map-creators/getting-started">Read the docs</Button>
+    <Button variant="outline" href="/docs/map-creators/getting-started">Read the docs</Button>
   </div>
   <div class="w-full flex justify-center mb-10 mt-2">
     <p class="text-sm">Requires login with Discord</p>

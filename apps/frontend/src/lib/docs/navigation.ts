@@ -34,10 +34,7 @@ export const docSections = [
   }
 ] as const;
 
-export const docPages = [
-  docsHome,
-  ...docSections.flatMap((section) => [...section.items])
-];
+export const docPages = [docsHome, ...docSections.flatMap((section) => [...section.items])];
 
 export const normalizeDocPath = (pathname: string) => pathname.replace(/\/$/, '') || '/';
 
