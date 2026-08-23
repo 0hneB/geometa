@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.{svelte,ts,js}\"",
     "fix": "prettier --write \"src/**/*.{svelte,ts,js}\" && eslint . --fix",
     "lint": "prettier --check \"src/**/*.{svelte,ts,js}\" && eslint .",
-    "test:docs": "node --test src/lib/docs/remark-headings.test.js",
+    "test:docs": "node --test src/lib/docs/remark-headings.test.js src/lib/server/requires-login.test.js",
     "sanity": "npm run fix && npm run check && npm run lint"
   },
   "devDependencies": {
