@@ -33,6 +33,14 @@ Run the following installation commands in order.
    - Since this command occupies a session, you'll need to open a new terminal window or move it to background
 4. `just api::db-init` - applies initial db data
 
+### Product documentation
+
+The user-facing product documentation is served at `/docs`. Its MDsveX source
+lives under `apps/frontend/src/routes/(public)/docs` and runs with the normal
+frontend. Use `npm run dev`, `npm run test:docs`, and `npm run build` from
+`apps/frontend` when editing it. The Scalar API reference at `/docs/api` uses
+the OpenAPI document served at `/api/docs/json`.
+
 ### Optional: local spam-detection model
 
 The Discord bot's spam pipeline needs a pinned ONNX model locally. This is

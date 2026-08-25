@@ -29,6 +29,8 @@
 - Show each meta's own images, links, and GeoJSON overlay
 - Load inactive meta details only when their tab is opened
 - Allow GeoJSON overlays and downloads to be disabled from the userscript menu
+- Fixed GeoJSON overlays conflicting with userscripts that also wrap Google Maps
+- Fixed meta popups closing when another userscript checks the current game
 
 ## [0.94]
 
@@ -5073,12 +5075,13 @@ context.l
     if (!mapsApi || !OriginalMap) return false;
     wrapFitBounds(OriginalMap.prototype);
     if (wrappedMapConstructors.has(OriginalMap)) return true;
-    const WrappedMap = class extends OriginalMap {
-      constructor(...args) {
-        super(...args);
-        trackMap(this);
-      }
+    const WrappedMap = function(...args) {
+      const map = new.target ? Reflect.construct(OriginalMap, args, new.target) : Reflect.apply(OriginalMap, this, args) ?? this;
+      trackMap(map);
+      return map;
     };
+    Object.setPrototypeOf(WrappedMap, OriginalMap);
+    Object.setPrototypeOf(WrappedMap.prototype, OriginalMap.prototype);
     wrappedMapConstructors.add(WrappedMap);
     mapsApi.Map = WrappedMap;
     return true;
@@ -5581,18 +5584,47 @@ context.l
   }
   delegate(["click", "keydown"]);
   let currentApp = null;
+  let currentElement = null;
+  let pendingRoundStartObserver = null;
+  function cancelPendingRoundStartUnmount() {
+    pendingRoundStartObserver?.disconnect();
+    pendingRoundStartObserver = null;
+  }
   function unmountSummaryWindow() {
+    cancelPendingRoundStartUnmount();
+    const element = currentElement ?? document.getElementById("geometa-summary");
+    currentElement = null;
     if (currentApp) {
       unmount(currentApp);
       currentApp = null;
     }
-    document.getElementById("geometa-summary")?.remove();
+    element?.remove();
+  }
+  function unmountSummaryWindowOnRoundStart() {
+    cancelPendingRoundStartUnmount();
+    const element = document.getElementById("geometa-summary");
+    const resultView = element?.closest('div[data-qa="result-view-top"]');
+    if (!element || !resultView) {
+      unmountSummaryWindow();
+      return;
+    }
+    const unmountWhenDisconnected = () => {
+      if (resultView.isConnected && element.isConnected) return;
+      observer.disconnect();
+      if (pendingRoundStartObserver === observer) pendingRoundStartObserver = null;
+      if (currentElement === element) unmountSummaryWindow();
+    };
+    const observer = new MutationObserver(unmountWhenDisconnected);
+    pendingRoundStartObserver = observer;
+    observer.observe(document.body, { childList: true, subtree: true });
+    unmountWhenDisconnected();
   }
   function mountSummaryWindow(container, props) {
     unmountSummaryWindow();
     const element = document.createElement("div");
     element.id = "geometa-summary";
     container.appendChild(element);
+    currentElement = element;
     currentApp = mount(App, { target: element, props });
   }
   function showMetaForRound(panoId, mapId, userscriptVersion, roundNumber) {
@@ -5654,7 +5686,10 @@ context.l
         clearMetaCache();
         await getMapInfo(event2.detail.map.id, true);
       });
-      GeoGuessrEventFramework.events.addEventListener("round_start", unmountSummaryWindow);
+      GeoGuessrEventFramework.events.addEventListener(
+        "round_start",
+        unmountSummaryWindowOnRoundStart
+      );
       GeoGuessrEventFramework.events.addEventListener("round_end", async (event2) => {
         unmountSummaryWindow();
         const mapInfo = await getMapInfo(event2.detail.map.id, false);

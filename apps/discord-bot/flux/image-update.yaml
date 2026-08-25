@@ -1,4 +1,4 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: discord-bot
@@ -9,7 +9,7 @@ spec:
   secretRef:
     name: registries
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
   name: discord-bot
@@ -23,7 +23,7 @@ spec:
     numerical:
       order: asc
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: discord-bot
@@ -45,7 +45,7 @@ spec:
     path: ./apps/discord-bot/flux
     strategy: Setters
 ---
-apiVersion: notification.toolkit.fluxcd.io/v1beta2
+apiVersion: notification.toolkit.fluxcd.io/v1
 kind: Receiver
 metadata:
   name: discord-bot-update-receiver
@@ -55,6 +55,6 @@ spec:
     name: discord-bot-update-webhook-token
   events: ["workflow_dispatch"]
   resources:
-    - apiVersion: image.toolkit.fluxcd.io/v1beta2
+    - apiVersion: image.toolkit.fluxcd.io/v1
       kind: ImageRepository
       name: discord-bot

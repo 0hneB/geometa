@@ -7,6 +7,7 @@ import { dev } from '$app/environment';
 import { building } from '$app/environment';
 import log from '$lib/log';
 import { createLoginBypassSession, isLoginBypassEnabled } from '$lib/login-bypass';
+import { requiresLogin } from '$lib/server/requires-login.js';
 
 // initializes db connection
 if (!building) {
@@ -35,11 +36,7 @@ export const handle: Handle = sequence(...sentryHandlers, async ({ event, resolv
   event.locals.db = db;
   event.locals.lucia = lucia;
 
-  const isAdminUrl =
-    event.url.pathname.startsWith('/map-making') ||
-    event.url.pathname.startsWith('/personal') ||
-    event.url.pathname.startsWith('/profile');
-  let redirectToLogin = isAdminUrl;
+  let redirectToLogin = requiresLogin(event.url.pathname);
 
   const sessionId = event.cookies.get(lucia.sessionCookieName);
   if (!sessionId) {

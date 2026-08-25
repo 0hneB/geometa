@@ -44,12 +44,159 @@
     @apply mb-3;
   }
 
-  .prose a {
+  .prose a:not(:where([data-slot='button'], .docs-card)) {
     @apply text-blue-600 underline hover:text-blue-800;
   }
 
-  .dark .prose a {
+  .dark .prose a:not(:where([data-slot='button'], .docs-card)) {
     @apply text-blue-400 hover:text-blue-300;
+  }
+
+  .docs-prose {
+    @apply text-base leading-7;
+  }
+
+  .docs-prose h1 {
+    @apply mt-0 mb-6 text-4xl;
+  }
+
+  .docs-prose h2 {
+    @apply mt-10 border-b pb-2 text-2xl;
+  }
+
+  .docs-prose h3 {
+    @apply mt-8 text-xl;
+  }
+
+  .docs-prose h2,
+  .docs-prose h3 {
+    scroll-margin-top: 4.75rem;
+  }
+
+  .docs-prose pre {
+    @apply mb-4 overflow-x-auto rounded-lg bg-muted p-4 text-sm text-foreground;
+  }
+
+  .docs-prose :not(pre) > code {
+    @apply rounded bg-muted px-1.5 py-0.5 text-sm;
+  }
+
+  .docs-prose table {
+    @apply mb-4 block w-full overflow-x-auto text-left text-sm;
+  }
+
+  .docs-prose th,
+  .docs-prose td {
+    @apply border px-3 py-2;
+  }
+
+  .docs-prose img {
+    @apply my-5 rounded-lg border;
+  }
+
+  .docs-prose blockquote {
+    @apply my-5 border-l-4 pl-4 text-muted-foreground;
+  }
+
+  .docs-prose hr {
+    @apply my-8;
+  }
+
+  .docs-hero {
+    @apply mb-10 flex flex-col items-start gap-6 border-b pb-10 sm:flex-row sm:items-center;
+  }
+
+  .docs-hero img {
+    @apply my-0 h-32 w-auto border-0;
+  }
+
+  .docs-hero h1 {
+    @apply mt-0 mb-2 bg-gradient-to-r from-green-700 to-sky-600 bg-clip-text text-transparent dark:from-green-400 dark:to-sky-400;
+  }
+
+  .docs-hero p {
+    @apply mb-5 text-xl text-muted-foreground;
+  }
+
+  .docs-callout {
+    @apply my-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 px-4 py-3 text-blue-950 dark:bg-blue-950 dark:text-blue-50;
+  }
+
+  .docs-callout[data-type='tip'] {
+    @apply border-green-500 bg-green-50 text-green-950 dark:bg-green-950 dark:text-green-50;
+  }
+
+  .docs-callout[data-type='caution'] {
+    @apply border-amber-500 bg-amber-50 text-amber-950 dark:bg-amber-950 dark:text-amber-50;
+  }
+
+  .docs-callout p:last-child {
+    @apply mb-0;
+  }
+
+  .docs-callout-title {
+    @apply mb-1 block;
+  }
+
+  .docs-steps > ol {
+    @apply space-y-4;
+  }
+
+  .docs-grid {
+    @apply my-6 grid gap-4 sm:grid-cols-2;
+  }
+
+  .docs-card {
+    @apply flex flex-col rounded-lg border bg-card p-4 text-card-foreground no-underline shadow-sm transition-colors hover:bg-accent hover:no-underline;
+  }
+
+  .docs-card strong {
+    @apply text-base;
+  }
+
+  .docs-card span {
+    @apply mt-1 text-sm text-muted-foreground;
+  }
+
+  .docs-page-footer {
+    @apply mt-12 border-t pt-6 text-sm;
+  }
+
+  .docs-pagination {
+    @apply mt-6 grid gap-3 sm:grid-cols-2;
+  }
+
+  .docs-pagination a {
+    @apply flex flex-col rounded-lg border p-4 no-underline hover:bg-accent hover:no-underline;
+  }
+
+  .docs-pagination a.next {
+    @apply text-right sm:col-start-2;
+  }
+
+  .docs-pagination span {
+    @apply text-xs text-muted-foreground;
+  }
+
+  .docs-pagination strong {
+    @apply text-foreground;
+  }
+
+  .docs-prose .token.punctuation {
+    @apply text-slate-600 dark:text-slate-300;
+  }
+
+  .docs-prose .token.property,
+  .docs-prose .token.number {
+    @apply text-pink-700 dark:text-pink-400;
+  }
+
+  .docs-prose .token.string {
+    @apply text-green-700 dark:text-green-300;
+  }
+
+  .docs-prose .token.operator {
+    @apply text-sky-700 dark:text-sky-200;
   }
 
   /* Task list styles */

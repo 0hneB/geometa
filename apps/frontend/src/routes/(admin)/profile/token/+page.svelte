@@ -187,6 +187,8 @@
           </Button>
         </form>
       {/if}
+      <Button variant="link" href="/docs/api" class="mt-3 h-auto p-0"
+        >View API documentation</Button>
     </CardContent>
   </Card>
 </div>

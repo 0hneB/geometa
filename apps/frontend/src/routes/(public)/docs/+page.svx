@@ -1,0 +1,67 @@
+---
+title: Learnable Meta documentation
+description: Install Learnable Meta, learn GeoGuessr country clues, and prepare maps for Learnable Meta players.
+template: splash
+hero:
+  title: Learnable Meta
+  tagline: Learn GeoGuessr country clues while you play.
+  actions:
+    - text: Get started
+      link: /docs/getting-started
+      variant: primary
+---
+
+<script>
+  import { LinkCard } from '$lib/components/docs';
+</script>
+
+Learnable Meta combines educational GeoGuessr maps with a browser userscript. After you guess, the script explains the useful clue at that location so you can learn landscapes, bollards, signs, road markings, Street View cars, and other country-identification clues in context.
+
+<div class="docs-grid">
+  <LinkCard
+    title="Getting Started"
+    href="/docs/getting-started"
+    description="Understand how Learnable Meta works and what you need before playing."
+  />
+  <LinkCard
+    title="Installation"
+    href="/docs/getting-started#install-learnable-meta"
+    description="Install the userscript on desktop or mobile."
+  />
+  <LinkCard
+    title="Using Learnable Meta"
+    href="/docs/getting-started#start-learning"
+    description="Choose a map, play a round, and review the clue after your guess."
+  />
+  <LinkCard
+    title="Personal Maps"
+    href="/docs/getting-started/personal-maps"
+    description="Combine shared metas into a focused GeoGuessr practice map."
+  />
+  <LinkCard
+    title="Map Creators"
+    href="/docs/map-creators/getting-started"
+    description="Tag locations and add educational notes to your own map."
+  />
+  <LinkCard
+    title="API Documentation"
+    href="/docs/api"
+    description="Explore endpoints, schemas, and ready-to-run request examples."
+  />
+  <LinkCard
+    title="Troubleshooting"
+    href="/docs/troubleshooting"
+    description="Fix common userscript, browser, and installation problems."
+  />
+  <LinkCard
+    title="Reference"
+    href="/docs/reference"
+    description="Find product links, terminology, and source code."
+  />
+</div>
+
+## Useful links
+
+- [Browse Learnable Meta maps](https://learnablemeta.com/maps)
+- [Join the Learnable Meta Discord](https://discord.gg/AcXEWznYZe) for help and feedback
+- [View the source code on GitHub](https://github.com/likeon/geometa)

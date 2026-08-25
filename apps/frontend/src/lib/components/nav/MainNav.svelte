@@ -35,7 +35,8 @@
     {#each navLinks as navLink (navLink.url)}
       {@render NavLink({
         navLink,
-        isActive: page.url.pathname.endsWith(navLink.url)
+        isActive:
+          page.url.pathname === navLink.url || page.url.pathname.startsWith(`${navLink.url}/`)
       })}
     {/each}
   </nav>
